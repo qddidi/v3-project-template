@@ -1,3 +1,5 @@
+随着前端工程化的发展,前端代码规范也显得越来越重要,所以作为一个前端对于这方面还是需要有一定的了解的。本篇文章将带大家使用`ESLint+Prettier+Stylelint+Husky`从零搭建一个`Vite+Vue3`项目
+
 ## ESlint
 
 ESLint 是在 ECMAScript/JavaScript 代码中识别和报告模式匹配的工具，它的目标是保证代码的一致性和避免错误,它的使用其实很简单
@@ -353,7 +355,7 @@ pnpm i -D lint-staged
 ```
 {
   "lint-staged": {
-    "**/*.{js,jsx,tsx,ts}": [
+    "**/*.{js,jsx,tsx,ts,vue}": [
       "npm run lint:script",
       "git add ."
     ],
@@ -414,3 +416,9 @@ npx husky add .husky/commit-msg "npx --no-install commitlint -e $HUSKY_GIT_PARAM
 npx --no-install commitlint -e
 
 ```
+
+我们试着提交一个不符合规范的信息就会发现控制台拦截了我们的`commit`
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e3741d1fd21423d837a0c88010e8fd3~tplv-k3u1fbpfcp-watermark.image?)
+
+## 总结
